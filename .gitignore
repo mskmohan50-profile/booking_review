@@ -1,0 +1,15 @@
+node_modules/
+web/dist/
+dist/
+*.log
+.env
+.env.*
+
+# Browser state can contain anonymous WAF clearance cookies — never commit it.
+data/browser-profile/
+data/debug-profile*/
+data/*.db-wal
+data/*.db-shm
+
+# Local exploration helpers
+scripts/

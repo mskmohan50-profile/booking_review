@@ -1,0 +1,41 @@
+{
+  "name": "azzurro-review-insights",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Collect and analyse publicly visible Booking.com guest reviews for Azzurro Hotels.",
+  "type": "module",
+  "scripts": {
+    "scrape": "tsx src/scraper/cli.ts",
+    "api": "tsx src/server/index.ts",
+    "dev": "concurrently -k \"npm:api\" \"npm:dev:web\"",
+    "dev:web": "vite --config web/vite.config.ts",
+    "build": "tsc --noEmit && vite build --config web/vite.config.ts",
+    "start": "tsx src/server/index.ts",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "express": "^5.1.0",
+    "lucide-react": "^0.548.0",
+    "playwright": "^1.56.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "better-sqlite3@12.11.1": true
+  }
+}
