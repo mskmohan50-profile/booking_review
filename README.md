@@ -1,14 +1,16 @@
-### Azzurro Hotels: Booking.com Review Insights
+## Azzurro Hotels: Booking.com Review Insights
 
 A local app that collects public Booking.com reviews for four Azzurro Hotels properties and shows weekly sentiment and recurring issues in an ops-friendly dashboard.
 
-### Quick start (Node 22+, npm, Chrome or Playwright Chromium)
+## Quick start (Node 22+, npm, Chrome or Playwright Chromium)
 
-$$ bash
+
+```bash
+cd azzurro-review-insights
 npm install
-npm run scrape      # collect reviews
-npm run dev         # API :3001, dashboard :5173
-$$
+npm run scrape          # collect reviews from all four properties
+npm run dev             # API on :3001, dashboard on :5173
+```
 
 For a single served build, run npm run build && npm start (http://localhost:3001). A snapshot of 549 real reviews is included, so the dashboard works immediately.
 
@@ -24,7 +26,7 @@ Scores are banded as ≤6 low-rated, 7 mixed, ≥8 positive.
 Weeks run Monday to Sunday in Sydney time, and an incomplete week is compared against an equal-length previous window.
 Topics (cleanliness, check-in, staff, noise, and so on) come from transparent keyword rules, not an AI model. Treat percentages as a triage signal, since one review can carry several topics.
 
-### Dashboard
+## Dashboard
 
 Filters by period and property, KPI cards, issue spotlight, trend charts, and a searchable review feed that links back to the source.
 It auto-checks for new reviews every 15 minutes and shows live scrape status.
